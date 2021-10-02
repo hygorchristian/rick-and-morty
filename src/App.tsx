@@ -1,5 +1,7 @@
 import React from "react";
 import GoogleFonts, { Font } from "react-google-font-loader";
+import AllCharacters from "./screens/AllCharacters";
+
 import "./styles/global.scss";
 
 const fonts: Font[] = [
@@ -11,7 +13,7 @@ function App() {
   return (
     <>
       <GoogleFonts fonts={fonts} />
-      <h1>Rick and Morty</h1>
+      <AllCharacters />
     </>
   );
 }

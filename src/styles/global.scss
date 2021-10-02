@@ -1,3 +1,7 @@
+:root {
+  --w-desktop: 1140px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -28,7 +32,7 @@ button {
 
 body {
   width: 100%;
-  background: radial-gradient(circle, #374f65 15%, #202226 100%);
+  background: radial-gradient(circle, #374f65 1%, #202226 80%, #202226 100%);
   background-size: 100vw 100vh;
 }
 
