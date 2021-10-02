@@ -1,15 +1,34 @@
 import React from "react";
-import { FaSkull } from "react-icons/fa";
+import { FaSkull, FaHeartbeat, FaQuestion } from "react-icons/fa";
+import { CharacterType } from "../../api";
 import "./style.scss";
 
-function Card() {
+type CardProps = {
+  item: CharacterType;
+};
+
+function Card({ item }: CardProps) {
+  const getIcon = (species: string) => {
+    switch (species) {
+      case "Alive":
+        return <FaHeartbeat />;
+      case "Dead":
+        return <FaSkull />;
+      case "unknown":
+        return <FaQuestion />;
+    }
+  };
+
   return (
     <div className="card">
-      <img src="https://wallpaperaccess.com/full/780744.png" alt="" className="thumbnail" />
-      <span className="name">Rick Sanchez</span>
+      <img src={item.image} alt="" className="thumbnail" />
+      <span className="name">{item.name}</span>
       <div className="info">
-        <span>Human</span> - <span>Alive </span>
-        <FaSkull />
+        <span>{item.species}</span> -{" "}
+        <span className="status">
+          {item.status}
+          {getIcon(item.status)}
+        </span>
       </div>
     </div>
   );
